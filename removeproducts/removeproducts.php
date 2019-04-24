@@ -54,18 +54,14 @@ class removeproducts extends  Module{
                     $p = new Product($row['id_product']);
                     if(!$p->delete()) {
                         $output .= " <span style='color: red'>Error borrando este producto!</span></p>";
-//                        echo " <span style='color: red'>Error deleting this product!</span></p>";
                     } else {
 
                         $output .= "<span style='color: green'>Borrado</span></p>";
-//                        echo " <span style='color: green'>DELETED</span></p>";
                     }
                 }
 
             $output .= $this->displayConfirmation($this->l('Productos borrados con exito'));
             }
-//            $output .= "<pre>".var_dump($res)."</pre>";
-//            $output .= $this->displayConfirmation($this->l('Settings updated'));
         }
 
         return $output.$this->displayForm();
@@ -101,8 +97,8 @@ class removeproducts extends  Module{
 
         // Title and toolbar
         $helper->title = $this->displayName;
-        $helper->show_toolbar = true;        // false -> remove toolbar
-        $helper->toolbar_scroll = true;      // yes - > Toolbar is always visible on the top of the screen.
+        $helper->show_toolbar = true;        
+        $helper->toolbar_scroll = true;      
         $helper->submit_action = 'submit'.$this->name;
         $helper->toolbar_btn = [
             'save' => [
